@@ -4,15 +4,15 @@ cmake_minimum_required(VERSION 3.16)
 # Auto‑derive project name from the root directory
 # —————————————————————————————————————————————
 get_filename_component(PROJECT_NAME "${CMAKE_SOURCE_DIR}" NAME)
-project(${PROJECT_NAME} LANGUAGES C)
+project(${PROJECT_NAME} LANGUAGES CXX)
 
 # —————————————————————————————————————————————
 # Project‑wide settings
 # —————————————————————————————————————————————
 # Require C11
-set(CMAKE_C_STANDARD      11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS     OFF)
+set(CMAKE_CXX_STANDARD      11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS     OFF)
 
 # Place all executables in <build>/bin/
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
@@ -31,7 +31,7 @@ find_package(raylib REQUIRED)
 # —————————————————————————————————————————————
 file(GLOB_RECURSE PROJECT_SOURCES
      CONFIGURE_DEPENDS
-     "${PROJECT_SOURCE_DIR}/src/*.c"
+     "${PROJECT_SOURCE_DIR}/src/*.cpp"
 )
 
 # —————————————————————————————————————————————
